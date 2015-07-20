@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  r_pwd: MyString
+  r_content: MyText
+
+two:
+  r_pwd: MyString
+  r_content: MyText

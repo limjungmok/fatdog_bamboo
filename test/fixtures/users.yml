@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  u_pwd: MyString
+  u_pwd_confirmation: MyString
+  u_admin: false
+
+two:
+  u_pwd: MyString
+  u_pwd_confirmation: MyString
+  u_admin: false

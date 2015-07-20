@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  b_category: MyString
+  b_content: MyText
+  b_pwd: MyString
+  b_click_count: 1
+  b_like: 1
+
+two:
+  b_category: MyString
+  b_content: MyText
+  b_pwd: MyString
+  b_click_count: 1
+  b_like: 1
