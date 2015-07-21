@@ -9,7 +9,7 @@ class BoardsController < ApplicationController
 	end
 
 	def index
-		
+		@board
 	end
 
 	def show
