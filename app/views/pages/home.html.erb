@@ -1,2 +1,86 @@
-<h1> 홈 - 정목 1234 </h1>
-asdfsaf
+<% provide(:title, "세종대 대나무숲") %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    h2{
+        margin: 0;     
+        color: #fff;
+        padding-top: 130px;
+        font-size: 52px;
+        font-family: "trebuchet ms", sans-serif;    
+    }
+    </style>
+  </head>
+  <body>
+    <div class="bs-example">
+        <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+          <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>   
+           <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+                <div class="active item">
+                    <h2><%= @boards.find(2).b_category%></h2>
+                    <hr>
+                    <div class="carousel-caption">
+                      <h3><%= @boards.find(2).b_content%> </h3>
+                      
+                    </div>
+                </div>
+                <div class="item">
+                    <h2><%= @boards.find(3).b_category %></h2>
+                    <hr>
+                    <div class="carousel-caption">
+                      <h3><%= @boards.find(3).b_content %></h3>
+                      
+                    </div>
+                </div>
+                <div class="item">
+                    <h2><%= @boards.find(4).b_category %></h2>
+                    <hr>
+                    <div class="carousel-caption">
+                      <h3><%= @boards.find(4).b_content %></h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="c">
+      <!-- Example row of columns -->
+      <div class="row">
+        <% @boards.each do |board| %>
+          <div class="col-md-4">
+            <h3><%= board.b_category %></h3><br>
+            <p><%= board.b_content %> </p><br>
+            <p>
+            <div class="more_button">
+            <a class="btn btn-primary" href="#" role="button">더보기 &raquo;</a></p>
+            </div>
+          </div>
+        <% end %>
+      </div> <!-- /container -->
+    </div>
+  </body>
+  <hr>
+  <footer>
+    &copy; FatDog Company 2015</p><br>
+  </footer>
+</html>                                   
+>>>>>>> jm_x
