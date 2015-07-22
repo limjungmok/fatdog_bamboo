@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   get 'write' =>  'pages#write'
   get 'board' =>  'pages#board'
   
-
 end
