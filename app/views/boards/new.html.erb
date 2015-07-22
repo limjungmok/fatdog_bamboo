@@ -1,1 +1,19 @@
-<h1>new</h1>
+<div class="text-center">
+	<div class="new_board">
+		<%= form_for(@board) do |f| %>
+		<div class="radio_btn">
+			<%= f.radio_button :b_category, '연애' %> 연애
+			<%= f.radio_button :b_category, '고민' %> 고민
+			<%= f.radio_button :b_category, '학과' %> 학과
+			<%= f.radio_button :b_category, '건의' %> 건의
+			<%= f.radio_button :b_category, '기타', checked: true %> 기타
+		</div>
+		<%= f.text_area :b_content, class: "text_area", size: "40x10",
+		placeholder: "자유롭게 적어주시되, 심한 비방 혹은 욕설을  사용할 경우에는 삭제됩니다." %>
+		<%= f.submit "Submit", class: "btn btn-lg btn-success",
+		data: { confirm: '정말 제보하시겠어요?' } %>
+
+		<% end %>
+	</div>
+</div>
+</div>

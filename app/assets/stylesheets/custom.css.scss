@@ -22,3 +22,23 @@ textarea {
 .center h1 {
   margin-bottom: 10px;
 }
+
+/* 글쓰기 화면 */
+
+.radio_btn {
+	margin-top: 30px;
+}
+
+.text_area {
+	padding: 8px;
+	margin-top: 20px;
+	margin-left: auto;
+  	margin-right: auto;
+	display: block;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.btn-lg, .btn-group-lg > .btn {
+	margin-top: 20px;
+}
