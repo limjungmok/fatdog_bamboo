@@ -12,11 +12,11 @@ class BoardsController < ApplicationController
 	end
 
 	def index
-		@board = Board.new
+		@boards = Board.all
 	end
 
 	def show
-		@boards = Board.all
+
 	end
 
 	def edit
