@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 /* universal */
 
 
@@ -28,10 +29,16 @@ textarea {
   margin-bottom: 10px;
 }
 
+
+
 /* 글쓰기 화면 */
 
-.radio_btn {
-	margin-top: 30px;
+.text-center {
+  margin-top: 100px;
+}
+
+.button_tag {
+	margin-top: 50px;
 }
 
 .text_area {
@@ -51,6 +58,7 @@ textarea {
 hr{
   width: 50px;
 }
+
 
 
 /* carousel */
