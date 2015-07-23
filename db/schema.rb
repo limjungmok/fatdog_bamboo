@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720065132) do
+ActiveRecord::Schema.define(version: 20150723121446) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "b_category"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20150720065132) do
     t.boolean  "u_admin"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "u_id"
   end
 
 end
