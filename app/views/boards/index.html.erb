@@ -1,5 +1,35 @@
 <% provide(:title, "게시판") %>
 <div class="test_css">
+
+	<div class="stats">
+
+	    <strong class="stat">
+	    </strong>
+	    <%= link_to "모든 태그", boards_path %>
+	    <strong class="stat">
+	    </strong>
+	    <%= link_to "연애", boards_path(:b_category => "연애") %>
+	  	<strong class="stat">
+	    </strong>
+	    <%= link_to "고민", boards_path(:b_category => "고민") %>
+	  	<strong class="stat">
+	    </strong>
+	    <%= link_to "학과", boards_path(:b_category => "학과") %>
+	    <strong class="stat">
+	    </strong>
+	    <%= link_to "건의", boards_path(:b_category => "건의") %>
+	    <strong class="stat">
+	    </strong>
+	    <%= link_to "기타", boards_path(:b_category => "기타") %>
+
+	    <strong class="stat">
+	    </strong>
+	    <%= link_to "조회순", boards_path(:b_click_count => 1) %>
+
+	    <strong class="stat">
+	    </strong>
+	    <%= link_to "추천순", boards_path(:b_like => 1) %>
+	</div>
 	<table class="table">
 		<tr>
 			<td>카테고리(없앨예정)</td>
@@ -27,7 +57,7 @@
 					<%= board.created_at %>
 				</td>
 				<td>
-					<%= link_to "삭제", "#", class:"btn btn-danger", data: { confirm: "삭제합니까?"}%>
+					<%= link_to "삭제", board, method: :delete, class:"btn btn-danger", data: { confirm: "삭제합니까?"}%>
 					<%= link_to "수정", "#", class:"btn btn-primary"%>
 				</td>
 			</tr>
