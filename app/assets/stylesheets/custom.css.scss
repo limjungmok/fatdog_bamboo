@@ -110,14 +110,11 @@ footer ul li {
 
 
 
-/* 글쓰기 화면 */
+/* 지연 */
+
 
 .text-center {
   margin-top: 100px;
-}
-
-.button_tag {
-	margin-top: 50px;
 }
 
 .radio_btn {
@@ -134,7 +131,15 @@ footer ul li {
 	text-align: center;
 }
 
-.btn-lg, .btn-group-lg > .btn {
+.image_upload_btn {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-left: 90px;
+}
+
+.btn, .btn-group > .btn {
 	margin-top: 20px;
 }
 

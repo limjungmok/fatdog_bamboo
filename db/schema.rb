@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723121446) do
+ActiveRecord::Schema.define(version: 20150724043943) do
 
   create_table "boards", force: :cascade do |t|
     t.string   "b_category"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150723121446) do
     t.integer  "b_like"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "b_picture"
   end
 
   create_table "replies", force: :cascade do |t|
