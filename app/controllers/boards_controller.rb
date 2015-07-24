@@ -44,6 +44,6 @@ class BoardsController < ApplicationController
 	private
 
 	def board_params
-		params.require(:board).permit(:b_category, :b_content, :b_click_count, :b_like)
+		params.require(:board).permit(:b_category, :b_content, :b_click_count, :b_like, :b_picture)
 	end
 end
