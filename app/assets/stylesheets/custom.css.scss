@@ -29,6 +29,59 @@ textarea {
   margin-bottom: 10px;
 }
 
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* footer */
+
+footer{
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+.footer_info{
+  text-align: center;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
 /* 승진 */
 
 .stats {
@@ -75,7 +128,7 @@ textarea {
 	padding: 8px;
 	margin-top: 20px;
 	margin-left: auto;
-  	margin-right: auto;
+  margin-right: auto;
 	display: block;
 	border-radius: 20px;
 	text-align: center;
@@ -85,11 +138,8 @@ textarea {
 	margin-top: 20px;
 }
 
-hr{
-  width: 50px;
-}
 
-
+/* 정목 */
 
 /* carousel */
 
@@ -100,6 +150,7 @@ hr{
 }
 .carousel{
     margin-top: 0px;
+    width: max;
 }
 
 .carousel-caption{
@@ -133,4 +184,14 @@ hr{
 }
 .more_button{
   text-align: right;
+}
+
+/* etc */
+
+hr{
+  width: 50px;
+}
+
+.login{
+  text-align: center;
 }
