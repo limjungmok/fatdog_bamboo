@@ -38,14 +38,25 @@
 			<td>작성 일자</td>
 			<td>삭제 / 수정</td>
 		</tr>
-		<% @boards.each do |board| %>
+		<% @boards.each_with_index do |board, index| %>
 			<tr>
 				<td>
 					<%= board.b_category %>
 				</td>
+
 				<td>
-					<%= board.b_content %>
+					<a data-toggle="collapse" aria-expanded="false" aria-controls="collapse<%= index+1 %>" href="#collapse<%= index+1 %>">
+	                  <%= board.b_content %>
+	                </a>
+	                <div class="collapse" id="collapse<%= index+1 %>">
+				  <div class="well">
+					<h5><%= board.b_content %></h5>
+					<%= link_to "추천", "#", class:"btn btn-default" %>
+				  </div>
+				</div>
 				</td>
+
+				
 				<td>
 					<%= board.b_click_count %>
 				</td>
