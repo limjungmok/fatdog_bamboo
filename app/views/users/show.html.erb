@@ -1,1 +1,23 @@
-<%= @user.id %> <%= @user.u_id %> <%= @user.u_pwd %>
+<% provide(:title, "세종대 대나무숲") %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="admin">	
+		<h1> Admin Page </h1><p>
+
+		<% @boards.each do|b| %>
+			<%= b.id %>
+			<%= b.b_category %>
+			<%= b.b_content %>
+			<%= link_to "삭제", board_path(b.id), 
+			method: :delete, 
+			class:"btn btn-danger", 
+			data: {confirm: "삭제합니까?"}%><p>
+		<% end %>
+	</div>
+</body>
+</html>
+
