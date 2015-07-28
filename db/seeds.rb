@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(u_id: "admin",
+			 u_pwd:"1234",
+			 u_pwd_confirmation:"1234",
+			)
 
 Board.create!(b_category: "연애",
 			  b_content: "연애 테스트",
