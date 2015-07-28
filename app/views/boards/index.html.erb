@@ -1,5 +1,4 @@
 <% provide(:title, "게시판") %>
-
 	<div class="stats">
 
 	    <strong class="stat">
@@ -43,20 +42,9 @@
 				<td>
 					<%= board.b_category %>
 				</td>
-
 				<td>
-					<a data-toggle="collapse" aria-expanded="false" aria-controls="collapse<%= index+1 %>" href="#collapse<%= index+1 %>">
-	                  <%= board.b_content %>
-	                </a>
-	                <div class="collapse" id="collapse<%= index+1 %>">
-				  <div class="well">
-					<h5><%= board.b_content %></h5>
-					<%= link_to "추천", "#", class:"btn btn-default" %>
-				  </div>
-				</div>
-				</td>
-
-				
+	                <%= link_to board.b_content, board %>
+				</td>		
 				<td>
 					<%= board.b_click_count %>
 				</td>

@@ -1,1 +1,8 @@
-<h1>show</h1>
+<%= @board.b_content %>
+
+<%= @board.b_click_count %>
+
+<span id="like"><%= @board.b_like %></span>
+
+
+<span id="like_button"><%= link_to "추천", edit_like_path(:id => @board.id), method: :patch, remote: true, class:"glyphicon glyphicon-thumbs-up"%></span>

@@ -25,11 +25,16 @@ class BoardsController < ApplicationController
 
 	def show
 		@board = Board.find(params[:id])
-		@board.increment! :b_click_count
+		# @board.increment! :b_click_count
 	end
 
 	def edit
 		
+	end
+
+	def edit_like
+		@board = Board.find(params[:id])
+		@board.increment! :b_like
 	end
 
 	def update
