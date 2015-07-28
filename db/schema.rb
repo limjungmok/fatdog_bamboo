@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20150728071212) do
     t.boolean  "u_admin"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "u_id"
     t.string   "password_digest"
   end
 
