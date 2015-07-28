@@ -38,7 +38,7 @@ class BoardsController < ApplicationController
 
 	def destroy
 		Board.find(params[:id]).destroy
-		redirect_to boards_path
+		redirect_to root_path
 	end
 
 
