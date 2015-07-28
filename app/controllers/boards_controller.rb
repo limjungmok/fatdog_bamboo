@@ -48,7 +48,9 @@ class BoardsController < ApplicationController
 
 
 	private
-
+	def current_board
+		@board = Board.find(params[:id])
+	end
 	def board_params
 		params.require(:board).permit(:b_category, :b_content, :b_click_count, :b_like, :b_picture)
 	end
