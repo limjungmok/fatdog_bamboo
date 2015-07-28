@@ -29,27 +29,39 @@
            <!-- Wrapper for carousel items -->
             <div class="carousel-inner">
                 <div class="active item">
-                    <h2><%= @click_count_list.first.b_category%></h2>
+                    <h2><%=link_to @click_count_list.first.b_category, 
+                        boards_path(:b_category => @click_count_list.first.b_category) %>
+                    </h2>
 
                     <hr>
                     <div class="carousel-caption">
-                      <h3><%= @click_count_list.first.b_content%> </h3>
+                    <h3><%=link_to @click_count_list.first.b_content, 
+                                @click_count_list.first %>
+                    </h3>
                       
                     </div>
                 </div>
                 <div class="item">
-                    <h2><%= @click_count_list.second.b_category %></h2>
+                    <h2><%=link_to @click_count_list.second.b_category,
+                         boards_path(:b_category => @click_count_list.second.b_category) %>
+                     </h2>
                     <hr>
                     <div class="carousel-caption">
-                      <h3><%= @click_count_list.second.b_content %></h3>
+                    <h3><%=link_to @click_count_list.second.b_content,
+                                   @click_count_list.second %>
+                    </h3>
                       
                     </div>
                 </div>
                 <div class="item">
-                    <h2><%= @click_count_list.third.b_category %></h2>
+                    <h2><%=link_to @click_count_list.third.b_category,
+                         boards_path(:b_category => @click_count_list.third.b_category) %>
+                     </h2>
                     <hr>
                     <div class="carousel-caption">
-                      <h3><%= @click_count_list.third.b_content %></h3>
+                    <h3><%=link_to @click_count_list.third.b_content,
+                                   @click_count_list.third %>
+                    </h3>
                     </div>
                 </div>
             </div>
@@ -72,7 +84,7 @@
             <p><%= board.b_content %> </p><br>
             <p>
             <div class="more_button">
-            <a class="btn btn-primary" role="button">더보기 &raquo;</a></p>
+            <%= link_to "더보기", board, class:"btn btn-primary"%>
             </div>
           </div>
         <% end %>

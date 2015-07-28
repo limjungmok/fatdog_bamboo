@@ -149,9 +149,12 @@ footer ul li {
 /* carousel */
 
 .item{
-    background: #333;    
+    background: #333;
     text-align: center;
     height: 400px !important;
+    a{
+      color: white;
+    }
 }
 .carousel{
     margin-top: 0px;
