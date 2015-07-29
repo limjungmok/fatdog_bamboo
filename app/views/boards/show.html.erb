@@ -1,15 +1,33 @@
-<%= @board.b_content %>
 
-<%= @board.b_click_count %>
+<div class="text-center">
+	
+		    조회수:<%= @board.b_click_count %>
+		    추천수:<span id="like"><%= @board.b_like %></span><span id="like_button">
+		    <%= link_to "추천", edit_like_path(:id => @board.id), method: :patch, remote: true, class:"glyphicon glyphicon-thumbs-up"%></span>
+	<p>
+	<textarea row="40" cols="15" class= "text_area" disabled="true"> <%= @board.b_content %> </textarea>
+</div>
 
-<span id="like"><%= @board.b_like %></span>
+<label class="label label-warning">댓글 보기</label>
+<table class="table">
+<tr>
+  	<td>내용</td><td>작성일</td>
+</tr>
+<% @board.replies.each do |r| %>  
+  <tr>
+  	<td><%= r.r_content %></td><td><%= r.created_at %></td>
+  </tr>
+<% end %>
+</table>
 
-
-<span id="like_button"><%= link_to "추천", edit_like_path(:id => @board.id), method: :patch, remote: true, class:"glyphicon glyphicon-thumbs-up"%></span>
-
-
-<section class="replies_form">
-        <%= render 'replies/reply_form' %>
-</section>
+<label class="label label-warning">댓글 달기</label>
+<%= form_for([@board, @board.replies.build]) do |f| %>
+  <div class="field">
+    <%= f.label :내용 %><br />
+    <%= f.text_field :r_content %>
+    <p>
+    <%= f.submit "등록", class:"btn btn-success btn-sm"%>
+  </div>
+<% end %>
 
 	

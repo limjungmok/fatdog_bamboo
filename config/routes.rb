@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   post 'login'		=> 'sessions#create'
   delete 'logout'	=> 'sessions#destroy'
   patch 'edit_like' => 'boards#edit_like'
-  resources :boards
+  resources :boards do
+  	resources :replies
+  end
   resources :users
-  resources :replies
+  
 end

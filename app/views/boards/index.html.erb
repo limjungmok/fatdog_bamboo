@@ -43,7 +43,7 @@
 					<%= board.b_category %>
 				</td>
 				<td>
-	                <%= link_to board.b_content, board %>
+	                <%= link_to board.b_content, board %><label style="color: gray">(<%= board.replies.size %>)</label>
 				</td>		
 				<td>
 					<%= board.b_click_count %>

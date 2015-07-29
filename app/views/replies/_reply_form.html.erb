@@ -1,5 +1,6 @@
 <%= form_for(Reply.new) do |f| %>
   <div class="field">
+  	<!-- <input type="hidden" name="reply[board_id]" value="1"> -->
     <%= f.text_area :r_content, placeholder: "댓글 작성" %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>

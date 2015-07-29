@@ -1,10 +1,13 @@
 class RepliesController < ApplicationController
 
 	def create
-		@reply = current_board.replies.build(reply_params)
-		if @micropost.save
-			redirect_to root_path
-		end
+		@board = Board.find(params[:board_id])
+		@reply = @board.replies.create(reply_params)
+		if @reply.save
+    		redirect_to board_path(@board)
+    	else
+    		redirect_to root_url
+    	end
 	end
 
 	def index
@@ -17,7 +20,4 @@ class RepliesController < ApplicationController
 		params.require(:reply).permit(:r_content)
 	end
 
-	def current_board
-		@reply = current_board.replies.find_by(id: params[:id])
-	end
 end
