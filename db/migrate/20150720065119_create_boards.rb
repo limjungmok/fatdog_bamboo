@@ -1,4 +1,3 @@
-require 'obscenity/board'
 
 class CreateBoards < ActiveRecord::Migration
   def change
