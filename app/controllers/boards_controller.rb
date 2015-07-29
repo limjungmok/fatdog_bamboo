@@ -8,6 +8,9 @@ class BoardsController < ApplicationController
 		@board = Board.new(board_params)
 		if @board.save
 			redirect_to root_path
+		else
+			flash.now[:danger]="카테고리를 선택해주세요"
+			redirect_to new_board_path
 		end
 	end
 

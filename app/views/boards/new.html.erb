@@ -6,12 +6,10 @@
 			<%= f.radio_button :b_category, '고민' %> 고민
 			<%= f.radio_button :b_category, '학과' %> 학과
 			<%= f.radio_button :b_category, '건의' %> 건의
-			<%= f.radio_button :b_category, '기타', checked: true %> 기타
+			<%= f.radio_button :b_category, '기타' %> 기타
 		</div>
-		<%= f.text_area :b_content, class: "text_area", size: "40x10",
+		<%= f.text_area :b_content, class: "text_area", size: "40x15",
 		placeholder: "자유롭게 적어주시되, 심한 비방 혹은 욕설을  사용할 경우에는 삭제됩니다." %>
-		<%= f.file_field :b_picture, class: "image_upload_btn",
-		accept: 'image/jpg, image/jpeg, image/gif, image/png' %>
 		<%= f.submit "Submit", class: "btn btn-success",
 		data: { confirm: '정말 제보하시겠어요?' } %>
 		<% end %>

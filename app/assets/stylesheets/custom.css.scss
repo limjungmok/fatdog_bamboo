@@ -114,7 +114,7 @@ footer ul li {
 
 
 .text-center {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .radio_btn {
@@ -129,14 +129,7 @@ footer ul li {
 	display: block;
 	border-radius: 20px;
 	text-align: center;
-}
-
-.image_upload_btn {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-left: 90px;
+  outline: transparent;
 }
 
 .btn, .btn-group > .btn {
