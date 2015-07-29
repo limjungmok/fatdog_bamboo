@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   patch 'edit_like' => 'boards#edit_like'
   resources :boards
   resources :users
+  resources :replies
 end

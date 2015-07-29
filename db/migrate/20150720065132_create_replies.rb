@@ -6,5 +6,6 @@ class CreateReplies < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :replies, [:board_id, :created_at]
   end
 end
