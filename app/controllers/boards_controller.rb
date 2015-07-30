@@ -9,8 +9,8 @@ class BoardsController < ApplicationController
 		if @board.save
 			redirect_to root_path
 		else
-			flash.now[:danger]="카테고리를 선택해주세요"
-			redirect_to new_board_path
+			flash.now[:danger]="해시태그 혹은 내용을 입력해주세요"
+			render new_board_path
 		end
 	end
 
@@ -28,7 +28,7 @@ class BoardsController < ApplicationController
 
 	def show
 		@board = Board.find(params[:id])
-		# @board.increment! :b_click_count
+		@board.increment! :b_click_count
 	end
 
 	def edit
@@ -51,9 +51,6 @@ class BoardsController < ApplicationController
 
 
 	private
-	def current_board
-		@board = Board.find(params[:id])
-	end
 	def board_params
 		params.require(:board).permit(:b_category, :b_content, :b_click_count, :b_like, :b_picture)
 	end

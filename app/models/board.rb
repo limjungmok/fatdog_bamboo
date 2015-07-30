@@ -3,7 +3,8 @@ require 'obscenity/rack'
 
 class Board < ActiveRecord::Base
 	has_many :replies
-	validates :b_category, presence: true
+	accepts_nested_attributes_for :replies
+	validates :b_category, presence: true, length: { maximum: 20 }
 	validates :b_content, obscenity: { sanitize: true, replacement: :stars }
 	after_initialize :init
 
