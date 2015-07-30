@@ -1,15 +1,11 @@
 <% provide(:title, "글쓰기") %>
 <div class="text-center">
-	<%= form_for(@board, html: { multipart: true }) do |f| %>
-		<div class="radio_btn">
-			<%= f.radio_button :b_category, '연애' %> 연애
-			<%= f.radio_button :b_category, '고민' %> 고민
-			<%= f.radio_button :b_category, '학과' %> 학과
-			<%= f.radio_button :b_category, '건의' %> 건의
-			<%= f.radio_button :b_category, '기타' %> 기타
-		</div>
-		<%= f.text_area :b_content, class: "text_area", size: "40x15",
-		placeholder: "자유롭게 적어주시되, 심한 비방 혹은 욕설을  사용할 경우에는 삭제됩니다." %>
+	<%= form_for(@board) do |f| %>
+		<%= f.text_area :b_category, class: "b_category_area",
+		size: "40x2", placeholder: "해시태그를 입력해주세요." %>
+		<%= f.text_area :b_content, class: "b_content_area",
+		size: "40x15", placeholder: "자유롭게 적어주시되, 심한 비방 혹은 욕설을
+		사용할 경우에는 삭제됩니다." %>
 		<%= f.submit "Submit", class: "btn btn-success",
 		data: { confirm: '정말 제보하시겠어요?' } %>
 		<% end %>
