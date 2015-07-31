@@ -18,8 +18,8 @@
 
 	<div class="search-class">
 		<%= form_tag(boards_path, :method => "get", id: "search-form") do %>
-		  <!--<%= text_field_tag :search, params[:search], placeholder: "#해시태그 검색" %>-->
-		  <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "#해시태그 검색",
+		  <%=link_to '#', '#' %>
+		  <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "해시태그 검색",
 		   type: "search", data: {autocomplete: autocomplete_board_b_category_boards_path} %>  
 
 		  <%= submit_tag "검색", :b_category => nil ,class:"btn btn-default btn-sm"%>
@@ -27,12 +27,12 @@
 	</div>
 	
 	<table class="table">
-		<tr class ="acitverow">
+		<tr class ="activerow">
 			<td>태그</td>
-			<td><b>내용</td>
-			<td><b>조회수</td>
-			<td><b>추천</td>
-			<td><b>작성 일자</b></td>
+			<td>내용</td>
+			<td>조회수</td>
+			<td>추천</td>
+			<td>작성 일자</td>
 		</tr>
 
 		<% @boards.each_with_index do |board, index| %>
@@ -42,10 +42,10 @@
 				</td>
 				<td>
 	                <%= link_to board.b_content, board %>
-	                <label style="color: gray">
+	                <label style="color: #ff3333">
 	                	(<%= board.replies.size %>)
 	                </label>
-				</td>		
+				</td>
 				<td>
 					<%= board.b_click_count %>
 				</td>

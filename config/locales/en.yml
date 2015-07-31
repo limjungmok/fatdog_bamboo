@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+en:
+  will_paginate:
+    previous_label: "&#8592; 이전"
+    next_label: "다음 &#8594;"
+    page_gap: "&hellip;"

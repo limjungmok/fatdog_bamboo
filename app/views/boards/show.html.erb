@@ -13,13 +13,17 @@
 <div class = "comment-show">
   <label class="label label-warning">댓글 보기</label>
   <hr>
-  <table class="table">
+  <table class="table table-striped">
   <tr>
-    	<td>내용</td><td>작성일</td>
+    	<td>작성</td>
+      <td>내용</td>
+      <td>작성일</td>
   </tr>
   <% @board.replies.each do |r| %>  
     <tr>
-    	<td><%= r.r_content %></td><td><%= r.created_at %></td>
+      <td>익명<%= r.id %></td>
+    	<td><%= r.r_content %></td>
+      <td><%= r.created_at.strftime("%d %b. %Y") %></td>
     </tr>
   <% end %>
   </table>
@@ -28,7 +32,8 @@
   <label class="label label-warning">댓글 작성</label><p>
   <%= form_for([@board, @board.replies.build]) do |f| %>
     <div class="field">
-      <%= f.text_field :r_content, placeholder: "댓글을 입력하세" %><p>
+      익명 : 
+      <%= f.text_field :r_content, placeholder: "댓글을 입력하세요" %><p>
       <p>
       <%= f.submit "등록", class:"btn btn-primary btn-sm"%>
     </div>
