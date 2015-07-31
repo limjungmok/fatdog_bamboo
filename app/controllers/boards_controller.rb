@@ -6,6 +6,7 @@ class BoardsController < ApplicationController
 
 	def create
 		@board = Board.new(board_params)
+		@board.b_category = @board.b_category.split(' ')[0..100].join(' ')
 		if @board.save
 			redirect_to root_path
 		else

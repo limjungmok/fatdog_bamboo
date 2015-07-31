@@ -3,9 +3,14 @@
 	<%= form_for(@board) do |f| %>
 		<%= f.text_area :b_category, class: "b_category_area",
 		size: "40x2", placeholder: "해시태그를 입력해주세요." %>
+		<button type="button" class="btn btn-xs btn-success" data-toggle="tooltip"
+		data-placement="right" title="#을 입력한 후 원하는 태그를 입력하세요.
+태그 사이에는 반드시 띄어쓰기를 해야합니다.
+ex) #안녕 #하세요">
+		? </button>
 		<%= f.text_area :b_content, class: "b_content_area",
 		size: "40x15", placeholder: "자유롭게 적어주시되, 심한 비방 혹은 욕설을
-		사용할 경우에는 삭제됩니다." %>
+사용할 경우에는 삭제됩니다." %>
 		<%= f.submit "Submit", class: "btn btn-success",
 		data: { confirm: '정말 제보하시겠어요?' } %>
 		<% end %>

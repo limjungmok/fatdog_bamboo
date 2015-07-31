@@ -130,13 +130,13 @@ tr.activerow{
 
 /* 지연 */
 
-
 .text-center {
   margin-top: 50px;
 }
 
 .b_category_area {
-	margin-top: 30px;
+	margin-top: 80px;
+  margin-bottom: -30px;
   padding: 8px;
   display: block;
   margin-left: auto;
@@ -155,8 +155,14 @@ tr.activerow{
 	border-radius: 20px;
 	text-align: center;
   outline: transparent;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
+
+.btn-xs, .btn-group-xs > .btn {
+  margin-left: 360px;
+  margin-top: -20px;
+}
+
 
 
 /* 정목 */
