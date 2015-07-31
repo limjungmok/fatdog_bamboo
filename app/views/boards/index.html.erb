@@ -1,41 +1,30 @@
 <% provide(:title, "게시판") %>
+
 	<div class="stats">
-
-	    <strong class="stat">
-	    </strong>
-	    <%= link_to "모든 태그", boards_path %>
-	    <strong class="stat">
-	    </strong>
-	    <%= link_to "연애", boards_path(:b_category => "연애") %>
-	  	<strong class="stat">
-	    </strong>
-	    <%= link_to "고민", boards_path(:b_category => "고민") %>
-	  	<strong class="stat">
-	    </strong>
-	    <%= link_to "학과", boards_path(:b_category => "학과") %>
-	    <strong class="stat">
-	    </strong>
-	    <%= link_to "건의", boards_path(:b_category => "건의") %>
-	    <strong class="stat">
-	    </strong>
-	    <%= link_to "기타", boards_path(:b_category => "기타") %>
-
-	    <strong class="stat">
-	    </strong>
-	    <%= link_to "조회순", boards_path(:b_click_count => 1) %>
-
-	    <strong class="stat">
-	    </strong>
-	    <%= link_to "추천순", boards_path(:b_like => 1) %>
+	    <%= link_to "All", boards_path, class:"btn btn-primary" %>
+	    <%= link_to "연애", boards_path(:b_category => "연애"),class:"btn btn-primary" %>
+	    <%= link_to "고민", boards_path(:b_category => "고민"),class:"btn btn-primary" %>
+	    <%= link_to "학과", boards_path(:b_category => "학과"),class:"btn btn-primary" %>
+	    <%= link_to "건의", boards_path(:b_category => "건의"),class:"btn btn-primary" %>
+	    <%= link_to "기타", boards_path(:b_category => "기타"),class:"btn btn-primary" %>
+	    <%= link_to "조회순", boards_path(:b_click_count => 1),class:"btn btn-primary" %>
+		<%= link_to "추천순", boards_path(:b_like => 1),class:"btn btn-primary" %>
 	</div>
+
+	<div class="search-class">
+		<%= form_tag(boards_path, :method => "get", id: "search-form") do %>
+		  <%= text_field_tag :search, params[:search], placeholder: "#해시태그 검색" %>
+		  <%= submit_tag "검색", :b_category => nil ,class:"btn btn-default btn-sm"%>
+		<% end %>
+	</div>
+	
 	<table class="table">
-		<tr>
+		<tr class ="acitve">
 			<td>카테고리(없앨예정)</td>
 			<td>내용</td>
 			<td>조회수</td>
 			<td>추천</td>
 			<td>작성 일자</td>
-			<td>삭제 / 수정</td>
 		</tr>
 		<% @boards.each_with_index do |board, index| %>
 			<tr>
@@ -43,7 +32,10 @@
 					<%= board.b_category %>
 				</td>
 				<td>
-	                <%= link_to board.b_content, board %><label style="color: gray">(<%= board.replies.size %>)</label>
+	                <%= link_to board.b_content, board %>
+	                <label style="color: gray">
+	                	(<%= board.replies.size %>)
+	                </label>
 				</td>		
 				<td>
 					<%= board.b_click_count %>
@@ -53,10 +45,6 @@
 				</td>
 				<td>
 					<%= board.created_at %>
-				</td>
-				<td>
-					<%= link_to "삭제", board, method: :delete, class:"btn btn-danger", data: { confirm: "삭제합니까?"}%>
-					<%= link_to "수정", "#", class:"btn btn-primary"%>
 				</td>
 			</tr>
 		<% end %>

@@ -21,6 +21,8 @@ class BoardsController < ApplicationController
 			@boards = Board.order("b_click_count DESC")
 		elsif(params[:b_like])
 			@boards = Board.order("b_like DESC")
+		elsif params[:search]
+		    @boards = Board.search(params[:search])
 		else
 			@boards = Board.all
 		end

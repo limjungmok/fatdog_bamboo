@@ -85,30 +85,39 @@ footer ul li {
 /* 승진 */
 
 .stats {
+  text-align: center;
   overflow: auto;
-  margin-top: 30;
-  padding: 0;
+  margin: auto;
 
   a {
+
     float: left;
-    padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
-    color: gray;
+    margin-right: 15px;
+    text-align: center;
+    color: white;
     &:first-child {
-      padding-left: 0;
+      padding-left: 10;
       border: 0;
     }
     &:hover {
       text-decoration: none;
-      color: magenta;
     }
   }
-  strong {
-    display: block;
-  }
 }
-
-
+.btn btn-default btn-sm{
+  text-align: center;
+}
+.search-class{
+  text-align: right;
+  margin-top: 30px;
+  margin-right: 200px;
+  margin-bottom: 50px;
+}
+.table{
+  width: 75%;
+  margin: auto;
+  text-align: center;
+}
 
 /* 지연 */
 
@@ -132,14 +141,11 @@ footer ul li {
   outline: transparent;
 }
 
-.btn, .btn-group > .btn {
-	margin-top: 20px;
-}
-
 
 /* 정목 */
 
 /* carousel */
+
 
 .item{
     background: #333;
@@ -192,10 +198,6 @@ footer ul li {
 }
 
 /* etc */
-
-hr{
-  width: 50px;
-}
 
 .login{
   text-align: center;
