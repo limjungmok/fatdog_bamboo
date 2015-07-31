@@ -12,4 +12,12 @@ class Board < ActiveRecord::Base
 		self.b_click_count ||= 0
 		self.b_like ||= 0
 	end
+
+	def self.search(search)
+		if search
+			where('b_category LIKE ?', "%#{search}%")
+		else
+			scoped
+		end
+	end
 end
