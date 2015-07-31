@@ -31,6 +31,8 @@ gem 'fog'			,		'1.23.0'
 gem 'obscenity'		,		'1.0.1'
 gem 'bcrypt',               '3.1.7'
 gem 'rails4-autocomplete'
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

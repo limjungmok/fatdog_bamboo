@@ -27,15 +27,16 @@
 	</div>
 	
 	<table class="table">
-		<tr class ="acitve">
-			<td>태</td>
-			<td>내용</td>
-			<td>조회수</td>
-			<td>추천</td>
-			<td>작성 일자</td>
+		<tr class ="acitverow">
+			<td>태그</td>
+			<td><b>내용</td>
+			<td><b>조회수</td>
+			<td><b>추천</td>
+			<td><b>작성 일자</b></td>
 		</tr>
+
 		<% @boards.each_with_index do |board, index| %>
-			<tr>
+			<tr class="lovelyrow">
 				<td>
 					<%= board.b_category %>
 				</td>
@@ -57,6 +58,9 @@
 			</tr>
 		<% end %>
 	</table>
+	<div class="paginate">
+		<%= will_paginate %>
+	</div>
 </body>
 <script>
 	$( document ).ready(function() {
@@ -64,6 +68,7 @@
 	  $('.search-me').trigger('click')
 	  });
 	});
+
 </script>
 
 </html>

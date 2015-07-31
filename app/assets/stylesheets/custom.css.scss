@@ -85,18 +85,13 @@ footer ul li {
 /* 승진 */
 
 .stats {
-  text-align: center;
-  overflow: auto;
-  margin: auto;
+    text-align: center;
+    margin-top: 50px;
 
   a {
-
-    float: left;
     margin-right: 15px;
-    text-align: center;
     color: white;
     &:first-child {
-      padding-left: 10;
       border: 0;
     }
     &:hover {
@@ -117,6 +112,16 @@ footer ul li {
   width: 75%;
   margin: auto;
   text-align: center;
+}
+tr.lovelyrow:hover{
+  background-color: #CEF6EC;
+  cursor: pointer;
+
+}
+
+tr.active-row{
+  font-weight:bold;
+  
 }
 
 /* 지연 */
@@ -183,6 +188,18 @@ footer ul li {
   margin-left: 100px;
 }
 
+
+/* show */
+
+.comment-show{
+  text-align: center;
+}
+hr{
+  width: 75%;
+}
+.paginate{
+  text-align: center;
+}
 
 /* Home bottom container */
 
