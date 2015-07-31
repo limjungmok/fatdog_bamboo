@@ -9,8 +9,8 @@ class BoardsController < ApplicationController
 		if @board.save
 			redirect_to root_path
 		else
-			flash.now[:danger]="카테고리를 선택해주세요"
-			redirect_to new_board_path
+			flash.now[:danger]="해시태그 혹은 내용을 입력해주세요"
+			render new_board_path
 		end
 	end
 
