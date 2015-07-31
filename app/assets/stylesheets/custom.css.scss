@@ -4,6 +4,27 @@
 
 /* universal */
 
+.navbar-inverse{
+  background-color: #fff;
+  border-color: #eee;
+  border-width: 1px;
+}
+
+.navbar-inverse .navbar-brand{
+  color: #222;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus{
+  color: #ccc;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+  color: #222;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
+  color: #ccc;
+}
 
 body {
   padding-top: 50px;
@@ -121,12 +142,87 @@ footer ul li {
 tr.lovelyrow:hover{
   background-color: #eaeaea;
   cursor: pointer;
-}
 
+}
+tr.lovelyrow{
+  a{
+  color: #449d44;
+  }
+  a:hover{
+  color: #5cb85c;
+    font-weight: bold;
+
+  }
+}
 tr.activerow{
   font-weight:bold;
-  font-size: 15px;
+  font-size: 16px;
+  color: #000;
 }
+.search-class{
+  a{
+    color:#449d44;
+  }
+}
+
+/* Paginate */
+/*origin*/
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus{
+    color: #449d44;
+}
+/*hover*/
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus{
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+/*paginate previous, next text*/
+.pagination > li > a, .pagination > li > span{
+  color:#4cae4c;
+}
+
+/*Board*/
+.board-show{
+  margin-left: 175px;
+  text-align: left;
+  font-style: italic;
+  font-size: 17px;
+  a{
+    color: #449d44;
+  }
+  a:hover{
+    color: #5cb85c;
+  }
+}
+
+.board-content-show{
+  text-align: center;
+  margin: auto;
+  width: 45%;
+  color: #222;
+}
+.comment-info-show{
+  margin-left: 175px;
+  text-align: left;
+  
+  font-size: 16px;
+
+}
+.comment_write{
+  margin-top: 150px;
+}
+/*Comments*/
+.thumbs{
+  a{
+    color: #449d44;  
+  }
+
+  a:hover, a:focus{
+    color: #5cb85c;
+    border-color: #4cae4c;  
+    text-decoration: blink;
+  }
+}
+
 
 /* 지연 */
 
