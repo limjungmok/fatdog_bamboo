@@ -6,20 +6,15 @@
 <body>
 
 	<div class="stats">
-	    <%= link_to "All", boards_path, class:"btn btn-primary" %>
-	    <%= link_to "연애", boards_path(:b_category => "연애"),class:"btn btn-primary" %>
-	    <%= link_to "고민", boards_path(:b_category => "고민"),class:"btn btn-primary" %>
-	    <%= link_to "학과", boards_path(:b_category => "학과"),class:"btn btn-primary" %>
-	    <%= link_to "건의", boards_path(:b_category => "건의"),class:"btn btn-primary" %>
-	    <%= link_to "기타", boards_path(:b_category => "기타"),class:"btn btn-primary" %>
-	    <%= link_to "조회순", boards_path(:b_click_count => 1),class:"btn btn-primary" %>
-		<%= link_to "추천순", boards_path(:b_like => 1),class:"btn btn-primary" %>
+	    <%= link_to "All", boards_path, class:"btn btn-success" %>
+	    <%= link_to "조회순", boards_path(:b_click_count => 1),class:"btn btn-success" %>
+		<%= link_to "추천순", boards_path(:b_like => 1),class:"btn btn-success" %>
 	</div>
 
 	<div class="search-class">
 		<%= form_tag(boards_path, :method => "get", id: "search-form") do %>
 		  <%=link_to '#', '#' %>
-		  <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "해시태그 검색",
+		  <%= text_field_tag :search, params[:search], class: "search-query", placeholder: " 해시태그를 입력하세요.",
 		   type: "search", data: {autocomplete: autocomplete_board_b_category_boards_path} %>  
 
 		  <%= submit_tag "검색", :b_category => nil ,class:"btn btn-default btn-sm"%>
@@ -41,7 +36,7 @@
 					<%= board.b_category %>
 				</td>
 				<td>
-	                <%= link_to board.b_content, board %>
+	                <%= link_to truncate(board.b_content, length:10), board %>
 	                <label style="color: #ff3333">
 	                	(<%= board.replies.size %>)
 	                </label>

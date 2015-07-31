@@ -14,19 +14,19 @@ class BoardsController < ApplicationController
 		end
 	end
 
-	def index
-		if(params[:b_category])
-			@boards = Board.paginate(page: params[:page], :per_page => 10).where("b_category = ? ", params[:b_category])
-		elsif(params[:b_click_count])
-			@boards = Board.paginate(page: params[:page], :per_page => 10).order("b_click_count DESC")
-		elsif(params[:b_like])
-			@boards = Board.paginate(page: params[:page], :per_page => 10).order("b_like DESC")
-		elsif params[:search]
-		    @boards = Board.paginate(page: params[:page], :per_page => 10).search(params[:search])
-		else
-			@boards = Board.paginate(page: params[:page], :per_page =>10)
-		end
-	end
+    def index
+        if(params[:b_category])
+            @boards = Board.paginate(page: params[:page], :per_page => 10).where("b_category = ? ", params[:b_category])
+        elsif(params[:b_click_count])
+            @boards = Board.paginate(page: params[:page], :per_page => 10).order("b_click_count DESC")
+        elsif(params[:b_like])
+            @boards = Board.paginate(page: params[:page], :per_page => 10).order("b_like DESC")
+        elsif params[:search]
+            @boards = Board.paginate(page: params[:page], :per_page => 10).search(params[:search])
+        else
+            @boards = Board.paginate(page: params[:page], :per_page =>10)
+        end
+    end
 
 	def show
 		@board = Board.find(params[:id])
