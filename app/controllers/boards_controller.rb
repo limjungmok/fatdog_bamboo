@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-	
+	autocomplete :board, :b_category
 	def new
 		@board = Board.new
 	end

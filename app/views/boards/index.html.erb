@@ -1,4 +1,9 @@
 <% provide(:title, "게시판") %>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
 
 	<div class="stats">
 	    <%= link_to "All", boards_path, class:"btn btn-primary" %>
@@ -13,14 +18,17 @@
 
 	<div class="search-class">
 		<%= form_tag(boards_path, :method => "get", id: "search-form") do %>
-		  <%= text_field_tag :search, params[:search], placeholder: "#해시태그 검색" %>
+		  <!--<%= text_field_tag :search, params[:search], placeholder: "#해시태그 검색" %>-->
+		  <%= text_field_tag :search, params[:search], class: "search-query", placeholder: "#해시태그 검색",
+		   type: "search", data: {autocomplete: autocomplete_board_b_category_boards_path} %>  
+
 		  <%= submit_tag "검색", :b_category => nil ,class:"btn btn-default btn-sm"%>
 		<% end %>
 	</div>
 	
 	<table class="table">
 		<tr class ="acitve">
-			<td>카테고리(없앨예정)</td>
+			<td>태</td>
 			<td>내용</td>
 			<td>조회수</td>
 			<td>추천</td>
@@ -44,8 +52,18 @@
 					<%= board.b_like %>
 				</td>
 				<td>
-					<%= board.created_at %>
+					<%= board.created_at.strftime("%d %b. %Y") %>
 				</td>
 			</tr>
 		<% end %>
 	</table>
+</body>
+<script>
+	$( document ).ready(function() {
+	  $('.search-query').bind('railsAutocomplete.select', function(event, data {
+	  $('.search-me').trigger('click')
+	  });
+	});
+</script>
+
+</html>

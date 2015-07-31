@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   patch 'edit_like' => 'boards#edit_like'
   resources :boards do
   	resources :replies
+    get :autocomplete_board_b_category, :on => :collection
   end
   resources :users
   
