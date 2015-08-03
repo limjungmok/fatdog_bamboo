@@ -14,8 +14,13 @@
 	<div class="search-class">
 		<%= form_tag(boards_path, :method => "get", id: "search-form") do %>
 		  <%=link_to '#', '#' %>
-		  <%= text_field_tag :search, params[:search], class: "search-query", placeholder: " 해시태그를 입력하세요.",
-		   type: "search", data: {autocomplete: autocomplete_board_b_category_boards_path} %>  
+		  
+		  <%= text_field_tag :search, params[:search], 
+		  	class: "search-query", 
+		  	placeholder: " 해시태그를 입력하세요.",
+		   	type: "search", 
+		   	data: { autocomplete: autocomplete_board_b_category_boards_path },
+		   	remote: true %>  
 
 		  <%= submit_tag "검색", :b_category => nil ,class:"btn btn-default btn-sm"%>
 		<% end %>
@@ -23,34 +28,33 @@
 	
 	<table class="table">
 		<tr class ="activerow">
-			<td>태그</td>
-			<td>내용</td>
-			<td>조회수</td>
-			<td>추천</td>
-			<td>작성 일자</td>
+			<td class = "board-category">태그</td>
+			<td class = "board-content">내용</td>
+			<td class = "board-click-count">조회수</td>
+			<td class = "board-like">추천</td>
+			<td class = "board-time">작성 일자</td>
 		</tr>
 
 		<% @boards.each_with_index do |board, index| %>
-			<tr class="lovelyrow">
-				<td>
-					<%= board.b_category %>
+			<tr class="lovelyrow" >
+				<td class = "board-category">
+					<%= link_to board.b_category, boards_path(:b_category => board.b_category) %>
 				</td>
-				<td>
+				<td class = "board-content">
 	                <%= link_to truncate(board.b_content, length:10), board %>
 	                <label style="color: #ff3333">
 	                	(<%= board.replies.size %>)
 	                </label>
 				</td>
-				<td>
+				<td class = "board-click-count">
 					<%= board.b_click_count %>
 				</td>
-				<td>
+				<td class = "board-like">
 					<%= board.b_like %>
 				</td>
-				<td>
+				<td class = "board-time">
 					<%= board.created_at.strftime("%d %b. %Y") %>
 				</td>
-			</tr>
 		<% end %>
 	</table>
 	<div class="paginate">
@@ -58,10 +62,10 @@
 	</div>
 </body>
 <script>
-	$( document ).ready(function() {
-	  $('.search-query').bind('railsAutocomplete.select', function(event, data {
-	  $('.search-me').trigger('click')
-	  });
+	$(document).ready(function(){
+		$('.search-query').bind('railsAutocomplete.select', function(event, data){
+  		$('.search-form').trigger('click')
+		});
 	});
 
 </script>

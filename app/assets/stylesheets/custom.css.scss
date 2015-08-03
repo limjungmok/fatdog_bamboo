@@ -134,6 +134,17 @@ footer ul li {
   margin: auto;
   text-align: center;
 }
+.table table-bordered{
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  border-width: 0.1px;
+  border-color: black;
+}
+.table-bordered{
+  border: #fff;
+}
+
 .table table-striped{
   width: 30%;
   margin: auto;
@@ -163,6 +174,58 @@ tr.activerow{
   a{
     color:#449d44;
   }
+}
+
+/* td */
+table td.board-category{
+    width: 20%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+}
+table td.board-content{
+    width: 50%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+}
+table td.board-click-count{
+    width: 7.5%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+}
+table td.board-like{
+    width: 7.5%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+}
+table td.board-time{
+    width: 15%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/*comment*/
+table td.comment-writer{
+    width: 15%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;  
+}
+table td.comment-content{
+    width: 70%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;  
+}
+table td.comment-time{
+    width: 15%;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;  
 }
 
 /* Paginate */
@@ -208,7 +271,7 @@ tr.activerow{
 
 }
 .comment_write{
-  margin-top: 150px;
+  margin-top: 50px;
 }
 /*Comments*/
 .thumbs{
