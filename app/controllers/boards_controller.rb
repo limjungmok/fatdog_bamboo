@@ -39,9 +39,14 @@ class BoardsController < ApplicationController
 		
 	end
 
-	def edit_like
+	def like
 		@board = Board.find(params[:id])
 		@board.increment! :b_like
+	end
+
+	def unlike
+		@board = Board.find(params[:id])
+		@board.decrement! :b_like
 	end
 
 	def update

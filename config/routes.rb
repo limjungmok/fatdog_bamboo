@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'login'		=> 'sessions#new'
   post 'login'		=> 'sessions#create'
   delete 'logout'	=> 'sessions#destroy'
-  patch 'edit_like' => 'boards#edit_like'
+  patch 'like' => 'boards#like'
+  patch 'unlike' => 'boards#unlike'
   resources :boards do
   	resources :replies
     get :autocomplete_board_b_category, :on => :collection

@@ -10,12 +10,13 @@
           <span id="like_button"><p>
             <div class = "thumbs">
               <%= link_to "추천", 
-                edit_like_path(:id => @board.id), 
+                like_path(:id => @board.id), 
                 method: :patch, 
                 remote: true, 
                 class:"glyphicon glyphicon-thumbs-up"%><p><br><p>
             </div>
           </span>
+            <%= params.inspect %>
     <div class = "board-show">
       <td>
          # <%=link_to @board.b_category, boards_path(:b_category => @board.b_category) %>

@@ -15,3 +15,30 @@ ex) #안녕 #하세요">
 		data: { confirm: '정말 제보하시겠어요?' } %>
 		<% end %>
 </div>
+
+<script>
+	$('document').ready(function() {
+		var count = 0;
+		var total = "";
+
+ 		$("#board_b_category").keydown(function (key) {
+ 			
+                if (key.keyCode == 32) {
+                    var word = $("#board_b_category").val();
+                    var arr = word.split(" ");
+                    console.log(arr);
+                    for(i = count; i < arr.length; i++){
+							total = total + "#" + arr[i]+",";
+							console.log(total);
+							count++;
+					}	
+                }else if(key.keyCode == 9){
+                	$("#board_b_category").val(total);
+                }else{
+
+                }
+        });
+	});
+
+
+</script>
