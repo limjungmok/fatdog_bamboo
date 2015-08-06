@@ -7,7 +7,8 @@ class BoardsController < ApplicationController
 
 	def create
 		@board = Board.new(board_params)
-		@board.b_category = @board.b_category.split(' ')[0..100].join(' ')
+
+
 		if @board.save
 			redirect_to root_path
 		else
@@ -36,6 +37,10 @@ class BoardsController < ApplicationController
 
 
 	def show
+		@board = Board.find(params[:id])
+	end
+
+	def upClick
 		@board = Board.find(params[:id])
 		@board.increment! :b_click_count
 	end
