@@ -15,6 +15,7 @@ gem 'coffee-rails',	'~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
+
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -33,6 +34,8 @@ gem 'bcrypt',               '3.1.7'
 gem 'rails4-autocomplete'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'net-ssh', '2.10.0.beta2'
+gem "watu_table_builder", :require => "table_builder"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

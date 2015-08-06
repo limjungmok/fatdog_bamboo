@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   patch 'unlike' => 'boards#unlike'
   resources :boards do
   	resources :replies
-    get :autocomplete_board_b_category, :on => :collection
+      get :autocomplete_board_b_category, :on => :collection
   end
   resources :users
   

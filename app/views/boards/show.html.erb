@@ -1,4 +1,5 @@
 <% provide(:title, @board.b_content) %>
+
 <html>
 <head>
   <title></title>
@@ -16,7 +17,6 @@
                 class:"glyphicon glyphicon-thumbs-up"%><p><br><p>
             </div>
           </span>
-            <%= params.inspect %>
     <div class = "board-show">
       <td>
          # <%=link_to @board.b_category, boards_path(:b_category => @board.b_category) %>
@@ -44,7 +44,7 @@
         <tr>
           <td class = "comment-writer">익명<%= r.id %></td>
           <td class = "comment-content"><%= r.r_content %></td>
-          <td class = "comment-time"><%= r.created_at.strftime("%d %b. %Y") %></td>
+          <td class = "comment-time"><%= timestamp_division(r) %></td>
         </tr>
       <% end %>
       </table>

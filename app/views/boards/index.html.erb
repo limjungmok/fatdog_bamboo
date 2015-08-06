@@ -1,10 +1,13 @@
 <% provide(:title, "게시판") %>
 <html>
 <head>
-	<title></title>
+	<title>
+
+  
+</title>
+
 </head>
 <body>
-
 	<div class="stats">
 	    <%= link_to "All", boards_path, class:"btn btn-success" %>
 	    <%= link_to "조회순", boards_path(:b_click_count => 1),class:"btn btn-success" %>
@@ -13,10 +16,10 @@
 
 	<div class="search-class">
 		<%= form_tag(boards_path, :method => "get", id: "search-form") do %>
+
 		  <%=link_to '#', '#' %>
 		  
-		  <%= text_field_tag :search, params[:search], 
-		  	class: "search-query", 
+		  <%= text_field_tag :search, params[:search], class: "search-query", 
 		  	placeholder: " 해시태그를 입력하세요.",
 		   	type: "search", 
 		   	data: { autocomplete: autocomplete_board_b_category_boards_path },
@@ -40,7 +43,7 @@
 				<td class = "board-category">
 					<%= link_to board.b_category, boards_path(:b_category => board.b_category) %>
 				</td>
-				<td class = "board-content">
+				<td class = "board-content", id = "div-content", url="/boards/3">
 	                <%= link_to truncate(board.b_content, length:10), board %>
 	                <label style="color: #ff3333">
 	                	(<%= board.replies.size %>)
@@ -53,22 +56,30 @@
 					<%= board.b_like %>
 				</td>
 				<td class = "board-time">
-					<%= board.created_at.strftime("%d %b. %Y") %>
+					<%= timestamp_division(board) %><p>
 				</td>
 		<% end %>
+
 	</table>
 	<div class="paginate">
 		<%= will_paginate %>
 	</div>
-		<%= @ip %><%=@ip_addr %>
+
 </body>
-<script>
-	$(document).ready(function(){
-		$('.search-query').bind('railsAutocomplete.select', function(event, data){
-  		$('.search-form').trigger('click')
-		});
-	});
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-</script>
+	<script>
+		$('.search-query').click(function() {
+	    console.log(availableTags);	  	
+	    var availableTags = ["ab", "aa", "Aaaa", "asdfbaa"];
 
+	    $('.search-query').autocomplete({
+			source: $('.search-query').data('autocomplete_board_b_category_boards_path')
+	    })
+	  });
+
+
+	 </script>
 </html>

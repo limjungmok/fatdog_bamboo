@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
-	autocomplete :board, :b_category
+	autocomplete :board, :b_category 
+
 	def new
 		@board = Board.new
 	end
@@ -16,9 +17,6 @@ class BoardsController < ApplicationController
 	end
 
     def index
-    	@ip = remote_ip()
-    	@ip_addr = request.env['REMOTE_ADDR']
-
         if(params[:b_category])
             @boards = Board.paginate(page: params[:page], :per_page => 10).where("b_category = ? ", params[:b_category])
         elsif(params[:b_click_count])
@@ -31,6 +29,11 @@ class BoardsController < ApplicationController
             @boards = Board.paginate(page: params[:page], :per_page =>10)
         end
     end
+
+    def find_users
+	  render :json => Board.all.map {|b| b.b_category }
+	end
+
 
 	def show
 		@board = Board.find(params[:id])
@@ -61,6 +64,7 @@ class BoardsController < ApplicationController
 	end
 
 	private
+
 	def board_params
 		params.require(:board).permit(:b_category, :b_content, :b_click_count, :b_like, :b_picture)
 	end
