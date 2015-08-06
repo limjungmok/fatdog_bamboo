@@ -53,9 +53,7 @@
     <%= form_for([@board, @board.replies.build]) do |f| %>
       <div class="comment_write">
         <hr>
-        익명 : 
-        <%= f.text_field :r_content, placeholder: "  댓글을 입력하세요." %><p>
-        <p>
+        <%= f.text_field :r_content, placeholder: "  댓글을 입력하세요." , id: "comment-field"%>
         <%= f.submit "등록", class:"btn btn-success btn-sm"%>
       </div>
     <% end %>
