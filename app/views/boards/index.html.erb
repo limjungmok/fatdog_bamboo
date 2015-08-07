@@ -15,12 +15,20 @@
 		<%= form_tag(boards_path, :method => "get", id: "search-form") do %>
 		  <%=link_to '#', '#' %>
 		  
-		  <%= text_field_tag :search, params[:search], 
+		<%= text_field_tag :search, params[:search], 
 		  	class: "search-query", 
 		  	placeholder: " 해시태그를 입력하세요.",
 		   	type: "search", 
 		   	data: { autocomplete: autocomplete_board_b_category_boards_path },
-		   	remote: true %>  
+		   	remote: true 
+		%>  
+
+	   	<%= text_field_tag :search, params[:term], 
+		  	class: "search-test", 
+		  	placeholder: " 해시태그를 입력하세요.",
+		   	type: "search", 
+		   	remote: true 
+		%>  
 
 		  <%= submit_tag "검색", :b_category => nil ,class:"btn btn-default btn-sm"%>
 		<% end %>
@@ -66,6 +74,9 @@
 		$('.search-query').bind('railsAutocomplete.select', function(event, data){
   		$('.search-form').trigger('click')
 		});
+
+		$(".search-test").autocomplete({source: 'boards/us_states'} )
+		;
 	});
 
 </script>
