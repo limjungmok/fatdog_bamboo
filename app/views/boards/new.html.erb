@@ -3,7 +3,8 @@
 	<%= form_for(@board) do |f| %>
 		<div id ="b_category_hash">
 		<%= f.text_area :b_category, class: "b_category_area",
-		size: "40x2", placeholder: "해시태그를 입력해주세요." %>
+		size: "40x2", placeholder: "해시태그를 입력해주세요.
+( ex: #학과  #연애  #뒷담 )" %>
 		<button type="button" class="btn btn-xs btn-success" data-toggle="tooltip"
 		data-placement="right" title="태그명을 입력하고 띄어쓰기를 하면 자동으로 #(이)가 추가됩니다.">
 		?</button>
@@ -11,8 +12,8 @@
 		<%= f.text_area :b_content, class: "b_content_area",
 		size: "40x15", placeholder: "자유롭게 적어주시되, 심한 비방 혹은 욕설을
 사용할 경우에는 삭제됩니다." %>
-		<%= f.submit "Submit", class: "btn btn-success",
-		data: { confirm: '정말 제보하시겠어요?' } %>
+		<%= f.submit "등록", class: "btn btn-success",
+		data: { confirm: '정말 제보하시겠어요?', disable_with: "등록중.." } %>
 		<% end %>
 </div>
 
@@ -22,9 +23,7 @@
 		var total = "";
 		var word = "";
 		var arr = new Array();
-		$("#b_category_hash").click(function(){
-			$(".b_category_area").val("#");
-		})
+		
 		$("#board_b_category").keyup(function(key) {
                 if (key.keyCode == 32) {
                     word = $("#board_b_category").val();

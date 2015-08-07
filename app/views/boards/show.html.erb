@@ -19,7 +19,7 @@
           </span>
     <div class = "board-show">
       <td>
-         # <%=link_to @board.b_category, boards_path(:b_category => @board.b_category) %>
+        <%=link_to @board.b_category, boards_path(:b_category => @board.b_category) %>
       </td>
     </div>
 
@@ -54,7 +54,7 @@
       <div class="comment_write">
         <hr>
         <%= f.text_field :r_content, placeholder: "  댓글을 입력하세요." , id: "comment-field"%>
-        <%= f.submit "등록", class:"btn btn-success btn-sm"%>
+        <%= f.submit "등록", class:"btn btn-success btn-sm", data:{disable_with: "등록중.."}%>
       </div>
     <% end %>
   </div>
