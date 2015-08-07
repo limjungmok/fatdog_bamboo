@@ -15,7 +15,8 @@
 }
 
 .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus{
-  color: #ccc;
+  color: #000;
+  font-weight: bold
 }
 
 .navbar-inverse .navbar-nav > li > a{
@@ -23,8 +24,10 @@
 }
 
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
-  color: #ccc;
+  color: #000;
+  font-weight: bold
 }
+
 
 body {
   padding-top: 50px;
@@ -142,7 +145,7 @@ footer ul li {
   border-color: black;
 }
 .table-bordered{
-  border: #fff;
+  border: 1px, #fff;
 }
 
 .table table-striped{
@@ -153,16 +156,18 @@ footer ul li {
 tr.lovelyrow:hover{
   background-color: #eaeaea;
   cursor: pointer;
-
+  font-size: 17px;
 }
 tr.lovelyrow{
+
+  margin-top: 10px;
+  height: 55px;
   a{
   color: #449d44;
   }
   a:hover{
   color: #5cb85c;
-    font-weight: bold;
-
+  font-weight: bold;
   }
 }
 tr.activerow{
@@ -209,6 +214,10 @@ table td.board-time{
 }
 
 /*comment*/
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > tfoot > tr > td{
+  border: 0px;
+}
 table td.comment-writer{
     width: 15%;
     overflow: hidden;
@@ -226,6 +235,9 @@ table td.comment-time{
     overflow: hidden;
     display: inline-block;
     white-space: nowrap;  
+}
+#comment-field{
+  height: 25px;
 }
 
 /* Paginate */
@@ -259,7 +271,7 @@ table td.comment-time{
 
 .board-content-show{
   text-align: center;
-  margin: auto;
+  margin:auto;
   width: 45%;
   color: #222;
 }

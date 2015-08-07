@@ -63,30 +63,6 @@ class BoardsController < ApplicationController
 		redirect_to boards_path
 	end
 
-	def autocomplete
-		if params[:term]
-			like = "%".concat(params[:term].concat("%"))
-			boards = Board.where("b_category like ?", like)
-		else
-			boards = Board.all
-		end
-		list = boards.map {|b| Hash[b_category: b.b_category]}
-		render json: list
-	end
-
-	 def us_states
-    ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
-      "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia",
-      "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
-      "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
-      "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
-      "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota",
-      "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina",
-      "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia",
-      "Washington", "West Virginia", "Wisconsin", "Wyoming"]
-  end
-
-
 	private
 	def board_params
 		params.require(:board).permit(:b_category, :b_content, :b_click_count, :b_like, :b_picture)
