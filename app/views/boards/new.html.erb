@@ -22,13 +22,17 @@
 		var total = "";
 		var word = "";
 		var arr = new Array();
+		$("#b_category_hash").click(function(){
+			$(".b_category_area").val("#");
+		})
 		$("#board_b_category").keyup(function(key) {
                 if (key.keyCode == 32) {
                     word = $("#board_b_category").val();
                     arr[count] = word;
-                    total = total + "<a href='#'>#" + word +"</a>";
+				    total = total + "<a href='#'>" + word +"</a>";
 					$("#b_category_hash").html(total);
 					$("#board_b_category").val(arr);
+					console.log(total);
 					count++;
                 }
         });
