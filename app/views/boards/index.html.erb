@@ -1,12 +1,4 @@
 <% provide(:title, "게시판") %>
-<html>
-<head>
-	<title>
-
-  
-</title>
-
-</head>
 <body>
 	<div class="stats">
 	    <%= link_to "All", boards_path, class:"btn btn-success" %>
@@ -19,12 +11,8 @@
 
 		  <%=link_to '#', '#' %>
 		  
-<<<<<<< HEAD
 		<%= text_field_tag :search, params[:search], 
 		  	class: "search-query", 
-=======
-		  <%= text_field_tag :search, params[:search], class: "search-query", 
->>>>>>> f8c493b83357e44402f8058515c48af01b6c81c8
 		  	placeholder: " 해시태그를 입력하세요.",
 		   	type: "search", 
 		   	data: { autocomplete: autocomplete_board_b_category_boards_path },
@@ -79,32 +67,13 @@
 	</div>
 
 </body>
-<<<<<<< HEAD
 <script>
 	$(document).ready(function(){
 		$('.search-query').bind('railsAutocomplete.select', function(event, data){
   		$('.search-form').trigger('click')
 		});
 
-		$(".search-test").autocomplete({source: 'boards/us_states'} )
-		;
+		$(".search-test").autocomplete({source: 'boards/us_states'} );
 	});
-=======
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-	<script>
-		$('.search-query').click(function() {
-	    console.log(availableTags);	  	
-	    var availableTags = ["ab", "aa", "Aaaa", "asdfbaa"];
-
-	    $('.search-query').autocomplete({
-			source: $('.search-query').data('autocomplete_board_b_category_boards_path')
-	    })
-	  });
->>>>>>> f8c493b83357e44402f8058515c48af01b6c81c8
-
-
-	 </script>
-</html>
+</script>
