@@ -6,13 +6,16 @@ class BoardsController < ApplicationController
 
 	def create
 		@board = Board.new(board_params)
-
-
-		if @board.save
-			redirect_to root_path
+		@board.b_content = nil
+		if @board.b_category == '#'
+			flash[:danger] = "해시태그를 입력해라"
+			redirect_to new_board_path
+		elsif @board.b_category != '#' && @board.b_content.nil?
+			flash[:danger] = "내용 쓰고 다시해라"
+			redirect_to new_board_path
 		else
-			flash.now[:danger]="해시태그 혹은 내용을 입력해주세요"
-			render new_board_path
+			@board.save
+			redirect_to root_path
 		end
 	end
 
@@ -26,7 +29,7 @@ class BoardsController < ApplicationController
         elsif params[:search]
             @boards = Board.paginate(page: params[:page], :per_page => 10).search(params[:search])
         else
-            @boards = Board.paginate(page: params[:page], :per_page =>10)
+            @boards = Board.paginate(page: params[:page], :per_page =>10).order("created_at DESC")
         end
     end
 
