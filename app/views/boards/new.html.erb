@@ -1,13 +1,13 @@
 <% provide(:title, "글쓰기") %>
 <div class="text-center">
 	<%= form_for(@board) do |f| %>
-		<div id ="b_category_hash">
-		<%= f.text_area :b_category, class: "b_category_area",
-		size: "40x2", placeholder: "해시태그를 입력해주세요.
-		( ex: #학과  #연애  #뒷담 )" %>
-		<button type="button" class="btn btn-xs btn-success" data-toggle="tooltip"
-		data-placement="right" title="태그명을 입력하고 띄어쓰기를 하면 자동으로 #(이)가 추가됩니다.">
-		?</button>
+		<div id="board_area">
+			<%= f.text_area :b_category, class: "b_category_area",
+			size: "40x2", placeholder: "해시태그를 입력해주세요.
+			( ex: #학과  #연애  #뒷담 )" %>
+			<button type="button" class="btn btn-xs btn-success" data-toggle="tooltip"
+			data-placement="right" title="태그명을 입력하고 띄어쓰기를 하면 자동으로 #(이)가 추가됩니다.">
+			?</button>
 		</div>
 		<%= f.text_area :b_content, class: "b_content_area",
 		size: "40x15", placeholder: "자유롭게 적어주시되, 심한 비방 혹은 욕설을
@@ -23,15 +23,17 @@
 		var total = "";
 		var word = "";
 		var arr = new Array();
-		
 		$("#board_b_category").keyup(function(key) {
+				
                 if (key.keyCode == 32) {
                     word = $("#board_b_category").val();
                     arr[count] = word;
-				    total = total + "<a href='#'>" + word +"</a>";
-					$("#b_category_hash").html(total);
+				    total = "<a href='#'>#" + word +"</a>";
+				    console.log(arr);
+				    console.log(word);
+				    console.log(total);
+					$("#board_area").html(total);
 					$("#board_b_category").val(arr);
-					console.log(total);
 					count++;
                 }
         });
@@ -39,7 +41,7 @@
 		$('#new_board').submit(function(){ 
     		$('<input>').attr('type', 'hidden')
             .attr('name', "board[b_category]")
-            .attr('value', arr)
+            .attr('value', "#"+word)
             .appendTo('#new_board');
     	});
 	});

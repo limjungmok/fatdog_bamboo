@@ -17,14 +17,7 @@
 		   	type: "search", 
 		   	data: { autocomplete: autocomplete_board_b_category_boards_path },
 		   	remote: true 
-		%>  
-
-	   	<%= text_field_tag :search, params[:term], 
-		  	class: "search-test", 
-		  	placeholder: " 해시태그를 입력하세요.",
-		   	type: "search", 
-		   	remote: true 
-		%>  
+		%> 
 
 		  <%= submit_tag "검색", :b_category => nil ,class:"btn btn-default btn-sm", data: {disable_with: "검색중.."}%>
 		<% end %>
