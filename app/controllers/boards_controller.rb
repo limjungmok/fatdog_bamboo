@@ -17,7 +17,6 @@ class BoardsController < ApplicationController
 	end
 
     def index
-    	@ip = request.remote_ip
         if(params[:b_category])
             @boards = Board.paginate(page: params[:page], :per_page => 10).where("b_category = ? ", params[:b_category])
         elsif(params[:b_click_count])
