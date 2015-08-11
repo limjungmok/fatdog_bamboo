@@ -14,6 +14,12 @@ class RepliesController < ApplicationController
 		
 	end
 
+	def destroy
+		Board.find(params[:board_id]).replies.find(params[:id]).destroy
+		redirect_to :back
+		flash[:success] = "댓글삭제완료"
+	end
+
 	private
 
 	def reply_params
