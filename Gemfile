@@ -36,7 +36,7 @@ gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'net-ssh', '2.10.0.beta2'
 gem 'therubyracer'
-
+gem 'blockuijs-rails',  :git => 'git://github.com/rusanu/blockuijs-rails.git'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

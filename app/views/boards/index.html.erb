@@ -61,12 +61,16 @@
 
 </body>
 <script>
+    $.blockUI({messages:"Now Loading..."});
+
 	$(document).ready(function(){
+		$.unblockUI();
 		$('.search-query').bind('railsAutocomplete.select', function(event, data){
   		$('.search-form').trigger('click')
 		});
 
 		$(".search-test").autocomplete({source: 'boards/us_states'} );
 	});
+
 
 </script>
