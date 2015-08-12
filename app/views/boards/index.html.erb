@@ -42,7 +42,7 @@
    				<td class = "board-content" >
    				<a href='/boards/<%= board.id %>'>
 				<div>
-			    	<%= truncate(board.b_content, length:10) %>
+			    	<%= truncate(board.b_content, length:20) %>
 	                <label style="color: #ff3333">
 	                	(<%= board.replies.size %>)
 	                </label>
@@ -68,10 +68,9 @@
 
 </body>
 <script>
-    <!--$.blockUI({messages:"Now Loading..."});-->
 
 	$(document).ready(function(){
-		<!--$.unblockUI();-->
+		
 		$('.search-query').bind('railsAutocomplete.select', function(event, data){
   		$('.search-form').trigger('click')
 		});

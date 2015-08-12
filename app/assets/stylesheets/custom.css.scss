@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 
 /* universal */
@@ -32,7 +31,6 @@
 
 body {
   padding-top: 50px;
-  font-family: 'Nanum Gothic', sans-serif;
 }
 
 footer{
@@ -166,10 +164,10 @@ tr.lovelyrow{
   margin-top: 10px;
   height: 55px;
   a{
-  color: #449d44;
+  color: #777;
   }
   a:hover{
-  color: #5cb85c;
+  color: #222;
   font-weight: bold;
   }
 }
@@ -267,7 +265,8 @@ table td.comment-time{
     white-space: nowrap;  
 }
 #comment-field{
-  height: 25px;
+  width: 300px;
+  height: 30px;
 }
 
 #btn-admin-destroy{

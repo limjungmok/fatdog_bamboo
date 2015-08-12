@@ -36,6 +36,8 @@ class BoardsController < ApplicationController
 
 	def show
 		@board = Board.find(params[:id])
+		@board.increment! :b_click_count
+
 	end
 
 	def upClick
