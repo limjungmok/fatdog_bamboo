@@ -21,7 +21,10 @@
 </div>
 
 <script>
+
+
 	$('document').ready(function() {
+
 		var count = 0;
 		var total = "";
 		var word = "";
@@ -36,13 +39,15 @@
 					$("#board_b_category").val(arr);
 					count++;
                 }
-        });
-
+		})
+		
 		$('#new_board').submit(function(){ 
+
     		$('<input>').attr('type', 'hidden')
             .attr('name', "board[b_category]")
             .attr('value', "#"+word)
             .appendTo('#new_board');
+
     	});
 	});
 

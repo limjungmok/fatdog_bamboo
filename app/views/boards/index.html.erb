@@ -35,9 +35,10 @@
 		<% @boards.each_with_index do |board, index| %>
 			<tr class="lovelyrow" >
 				<td class = "board-category">
-					<%= link_to board.b_category, boards_path(:b_category => board.b_category) %>
+					<%= link_to truncate(board.b_category,length:10), 
+						boards_path(:b_category => board.b_category) %>
 				</td>
-				<td class = "board-content", id = "div-content", url="/boards/3">
+				<td class = "board-content">
 	                <%= link_to truncate(board.b_content, length:10), board %>
 	                <label style="color: #ff3333">
 	                	(<%= board.replies.size %>)
@@ -61,10 +62,10 @@
 
 </body>
 <script>
-    $.blockUI({messages:"Now Loading..."});
+    <!--$.blockUI({messages:"Now Loading..."});-->
 
 	$(document).ready(function(){
-		$.unblockUI();
+		<!--$.unblockUI();-->
 		$('.search-query').bind('railsAutocomplete.select', function(event, data){
   		$('.search-form').trigger('click')
 		});
@@ -72,5 +73,8 @@
 		$(".search-test").autocomplete({source: 'boards/us_states'} );
 	});
 
+	$('.div-content').click(function(){
+		window.location = $(this).data("link")
+	})
 
 </script>

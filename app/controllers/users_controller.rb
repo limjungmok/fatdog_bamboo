@@ -4,11 +4,10 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-  	@boards = Board.paginate(page: params[:page], :per_page => 1).all
+  	@boards = Board.paginate(page: params[:page], :per_page => 2).all
   end
 
   private
-
     def logged_in_user
       unless logged_in?
         flash[:danger] = "로그인 하세요"

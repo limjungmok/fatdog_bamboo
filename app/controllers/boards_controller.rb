@@ -6,17 +6,18 @@ class BoardsController < ApplicationController
 
 	def create
 		@board = Board.new(board_params)
-		@board.b_content = nil
-		if @board.b_category == '#'
-			flash[:danger] = "해시태그를 입력해라"
-			redirect_to new_board_path
-		elsif @board.b_category != '#' && @board.b_content.nil?
-			flash[:danger] = "내용 쓰고 다시해라"
-			redirect_to new_board_path
+		
+		if params[:board][:b_category] == "#"
+			flash[:danger] = "태그 제대로 써라"
+			redirect_to :back
+		elsif params[:board][:b_category] != '#' && params[:board][:b_content] == ""
+			flash[:danger] = "내용 제대로 써라"
+			redirect_to :back
 		else
 			@board.save
 			redirect_to root_path
 		end
+
 	end
 
     def index

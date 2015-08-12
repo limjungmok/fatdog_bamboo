@@ -6,8 +6,8 @@
 </head>
 <body>
 	<div class="admin">	
-		<h1> Admin Page </h1><p><hr>
-
+		<h1> Admin Page </h1><p><br>
+		
 		<% @boards.each do|b| %>
 			글 번호 : <%= b.id %><p>
 			글 태그 : <%= b.b_category %><p>
@@ -27,14 +27,13 @@
 				id: "btn-admin-destroy",
 				data:{confirm:"삭제?", disable_with: "삭제중.."} %><p><br>
 			<% end %><p>
-			<hr>
+
 		<% end %>
+
+		<div class="paginate">
+			<%= will_paginate @boards %>
+		</div>
 		
-	<div class="paginate">
-		<%= will_paginate @boards %>
-	</div>
-
-
 	</div>
 </body>
 </html>
