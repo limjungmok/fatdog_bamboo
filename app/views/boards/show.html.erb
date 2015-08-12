@@ -36,14 +36,14 @@
     <div class = "comment-show">
       <table class="table table-bordered">
       <tr>
-          <td class = "comment-writer">작성</td>
+          <td class = "comment-writer">작성자</td>
           <td class = "comment-content">내용</td>
-          <td class = "comment-time">작성일</td>
+          <td class = "comment-time">작성시간</td>
       </tr>
       
       <% @board.replies.each do |r| %>  
         <tr>
-          <td class = "comment-writer">익명<%= r.id %></td>
+          <td class = "comment-writer">익명</td>
           <td class = "comment-content"><%= r.r_content %></td>
           <td class = "comment-time"><%= timestamp_division(r) %></td>
         </tr>

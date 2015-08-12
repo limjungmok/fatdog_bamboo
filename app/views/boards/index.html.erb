@@ -38,19 +38,25 @@
 					<%= link_to truncate(board.b_category,length:10), 
 						boards_path(:b_category => board.b_category) %>
 				</td>
-				<td class = "board-content">
-	                <%= link_to truncate(board.b_content, length:10), board %>
+   				
+   				<td class = "board-content" >
+   				<a href='/boards/<%= board.id %>'>
+				<div>
+			    	<%= truncate(board.b_content, length:10) %>
 	                <label style="color: #ff3333">
 	                	(<%= board.replies.size %>)
 	                </label>
+	            </div>
+	            </a>
 				</td>
-				<td class = "board-click-count">
+
+				<td class = "board-click-count-row">
 					<%= board.b_click_count %>
 				</td>
-				<td class = "board-like">
+				<td class = "board-like-row">
 					<%= board.b_like %>
 				</td>
-				<td class = "board-time">
+				<td class = "board-time-row">
 					<%= timestamp_division(board) %><p>
 				</td>
 		<% end %>
@@ -70,11 +76,7 @@
   		$('.search-form').trigger('click')
 		});
 
-		$(".search-test").autocomplete({source: 'boards/us_states'} );
+		$(".search-test").autocomplete({source: 'boards/us_states'});
 	});
-
-	$('.div-content').click(function(){
-		window.location = $(this).data("link")
-	})
 
 </script>
